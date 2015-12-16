@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using TestFramework;
 
 namespace Tests
 {
@@ -7,8 +8,10 @@ namespace Tests
     public class UnitTest1
     {
         [TestMethod]
-        public void TestMethod1()
+        public void Can_Go_To_HomePage()
         {
+            Pages.HomePage.Goto();
+            Assert.IsTrue(Pages.HomePage.IsAt());
         }
     }
 }

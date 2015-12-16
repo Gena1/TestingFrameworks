@@ -10,7 +10,18 @@ namespace TestFramework
     {
         public static class HomePage
         {
+            public static void Goto()
+            {
+                Browser.Goto(Url)
+            }
 
+            protected static string Url = "http://pluralsight.com";
+
+            public static bool IsAt()
+            {
+                throw new NotImplementedException();
+            }
         }
     }
+           
 }

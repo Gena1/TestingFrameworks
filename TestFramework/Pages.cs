@@ -15,7 +15,7 @@ namespace TestFramework
                 Browser.Goto(Url)
             }
 
-            protected static string Url = "http://pluralsight.com";
+            static string Url = "http://pluralsight.com";
 
             public static bool IsAt()
             {

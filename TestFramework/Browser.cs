@@ -16,5 +16,10 @@ namespace TestFramework
         {
             webDriver.Url = url;
         }
+
+        public static void Close()
+        {
+            webDriver.Close();
+        }
     }
 }

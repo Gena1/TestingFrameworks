@@ -13,5 +13,10 @@ namespace Tests
             Pages.HomePage.Goto();
             Assert.IsTrue(Pages.HomePage.IsAt());
         }
+
+        public void CleanUp()
+        {
+            Browser.Close();
+        }
     }
 }

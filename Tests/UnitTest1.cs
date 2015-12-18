@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TestFramework;
 
 namespace Tests
@@ -14,6 +13,15 @@ namespace Tests
             Assert.IsTrue(Pages.HomePage.IsAt());
         }
 
+        [TestMethod]
+        public void Can_Go_To_AuthorPage()
+        {
+            Pages.HomePage.Goto();
+            Pages.HomePage.SelectAuthor("Matt Milner");
+            Assert.IsTrue(Pages.HomePage.IsAtAuthorPage("Matt Milner"));
+        }
+
+        [TestCleanup]
         public void CleanUp()
         {
             Browser.Close();

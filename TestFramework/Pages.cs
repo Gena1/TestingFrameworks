@@ -1,24 +1,17 @@
-﻿using System;
+﻿using OpenQA.Selenium.Support.PageObjects;
 
 namespace TestFramework
 {
     public static class Pages
     {
-        public static class HomePage
+        public static HomePage HomePage
         {
-            static string Url = "https://www.pluralsight.com/";
-            private static string PageTitle = "With Pluralsight, I was able to learn at my own pace, on my own time. Pluralsight gave me the tools that I need to express myself creatively.";
-
-            public static void Goto()
+            get
             {
-                Browser.Goto(Url);
-            }
-
-             public static bool IsAt()
-            {
-               return Browser.Title == PageTitle;
+                var homePage = new HomePage();
+                PageFactory.InitElements(Browser.Driver, homePage);
+                return homePage;
             }
         }
     }
-         
 }

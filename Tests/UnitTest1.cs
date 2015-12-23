@@ -17,7 +17,7 @@ namespace Tests
         public void Can_Go_To_FilmPage()
         {
             Pages.HomePage.Goto();
-            Pages.HomePage.SelectFilm("a.b-subsection-menu__item.m-films");
+            Pages.HomePage.SelectFilm("Фильмы");
             Assert.IsTrue(Pages.HomePage.IsAtFilmPage("Фильмы"));
         }
 

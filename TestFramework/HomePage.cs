@@ -23,7 +23,7 @@ public class HomePage
     public void SelectFilm(string film)
     {
         filmLink.Click();
-        var filmcategory = Browser.Driver.FindElement(By.CssSelector(film));
+        var filmcategory = Browser.Driver.FindElement(By.LinkText(film));
         filmcategory.Click();
     }
 
@@ -31,6 +31,6 @@ public class HomePage
     {
         var filmPage = new FilmPage();
         PageFactory.InitElements(Browser.Driver, filmPage);
-        return filmPage.categotyName == category;
+        return filmPage.CategoryFilm == category;
     }
 }

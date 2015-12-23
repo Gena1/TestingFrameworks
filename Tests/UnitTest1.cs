@@ -17,14 +17,14 @@ namespace Tests
         public void Can_Go_To_FilmPage()
         {
             Pages.HomePage.Goto();
-            Pages.HomePage.SelectFilmPage("Matt Milner");
-            Assert.IsTrue(Pages.HomePage.IsAtAuthorPage("Matt Milner"));
+            Pages.HomePage.SelectFilm("a.b-subsection-menu__item.m-films");
+            Assert.IsTrue(Pages.HomePage.IsAtFilmPage("Фильмы"));
         }
 
-        [TestCleanup]
-        public void CleanUp()
-        {
-            Browser.Close();
-        }
+        //[TestCleanup]
+        //public void CleanUp()
+        //{
+        //    Browser.Close();
+        //}
     }
 }

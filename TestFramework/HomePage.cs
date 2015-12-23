@@ -7,7 +7,7 @@ public class HomePage
     static string Url = "http://fs.to/";
     private static string PageTitle = "Рекомендательная сеть FS.to - онлайн фильмы, сериалы, музыка, игры, книги с возможностью скачивания";
 
-    [FindsBy(How = How.LinkText, Using = "Фильмы")]
+    [FindsBy(How = How.CssSelector, Using = "a.b-main__sections-item-title")]
     private IWebElement filmLink;
 
     public void Goto()
@@ -20,17 +20,17 @@ public class HomePage
         return Browser.Title == PageTitle;
     }
 
-    public void SelectFilmPage(string authorName)
+    public void SelectFilm(string film)
     {
         filmLink.Click();
-        var author = Browser.Driver.FindElement(By.LinkText(authorName));
-        author.Click();
+        var filmcategory = Browser.Driver.FindElement(By.CssSelector(film));
+        filmcategory.Click();
     }
 
-    public bool IsAtAuthorPage(string authorName)
+    public bool IsAtFilmPage(string category)
     {
-        var authorPage = new AuthorPage();
-        PageFactory.InitElements(Browser.Driver, authorPage);
-        return authorPage.AuthorName == authorName;
+        var filmPage = new FilmPage();
+        PageFactory.InitElements(Browser.Driver, filmPage);
+        return filmPage.categotyName == category;
     }
 }

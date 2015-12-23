@@ -4,11 +4,11 @@ using TestFramework;
 
 public class HomePage
 {
-    static string Url = "https://www.pluralsight.com/";
-    private static string PageTitle = "With Pluralsight, I was able to learn at my own pace, on my own time. Pluralsight gave me the tools that I need to express myself creatively.";
+    static string Url = "http://fs.to/";
+    private static string PageTitle = "Рекомендательная сеть FS.to - онлайн фильмы, сериалы, музыка, игры, книги с возможностью скачивания";
 
-    [FindsBy(How = How.LinkText, Using = "Authors")]
-    private IWebElement authorLink;
+    [FindsBy(How = How.LinkText, Using = "Фильмы")]
+    private IWebElement filmLink;
 
     public void Goto()
     {
@@ -20,9 +20,9 @@ public class HomePage
         return Browser.Title == PageTitle;
     }
 
-    public void SelectAuthor(string authorName)
+    public void SelectFilmPage(string authorName)
     {
-        authorLink.Click();
+        filmLink.Click();
         var author = Browser.Driver.FindElement(By.LinkText(authorName));
         author.Click();
     }

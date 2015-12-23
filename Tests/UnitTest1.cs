@@ -14,10 +14,10 @@ namespace Tests
         }
 
         [TestMethod]
-        public void Can_Go_To_AuthorPage()
+        public void Can_Go_To_FilmPage()
         {
             Pages.HomePage.Goto();
-            Pages.HomePage.SelectAuthor("Matt Milner");
+            Pages.HomePage.SelectFilmPage("Matt Milner");
             Assert.IsTrue(Pages.HomePage.IsAtAuthorPage("Matt Milner"));
         }
 

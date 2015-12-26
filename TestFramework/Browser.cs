@@ -1,11 +1,15 @@
-﻿using OpenQA.Selenium;
+﻿using System;
+using System.Security.Policy;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
+using OpenQA.Selenium.Remote;
 
 namespace TestFramework
 {
     public static class Browser
     {
-        static IWebDriver webDriver = new FirefoxDriver();
+        static IWebDriver webDriver = new RemoteWebDriver(new Uri("http://192.168.1.4:4444/wd/hub") ,
+           new DesiredCapabilities("firefox", "", new Platform(PlatformType.XP)));
 
         public static string Title
         {
@@ -26,5 +30,7 @@ namespace TestFramework
         {
             webDriver.Close();
         }
+
+        
     }
 }

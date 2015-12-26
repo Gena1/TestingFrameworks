@@ -1,9 +1,11 @@
-﻿using OpenQA.Selenium;
+﻿using System;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using TestFramework;
 
 public class HomePage
 {
+
     static string Url = "http://fs.to/";
     private static string PageTitle = "Рекомендательная сеть FS.to - онлайн фильмы, сериалы, музыка, игры, книги с возможностью скачивания";
 

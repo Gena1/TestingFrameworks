@@ -21,10 +21,10 @@ namespace Tests
             Assert.IsTrue(Pages.HomePage.IsAtFilmPage("Фильмы"));
         }
 
-        //[TestCleanup]
-        //public void CleanUp()
-        //{
-        //    Browser.Close();
-        //}
+        [TestCleanup]
+        public void CleanUp()
+        {
+            Browser.Close();
+        }
     }
 }
